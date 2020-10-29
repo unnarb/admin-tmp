@@ -1,60 +1,20 @@
-import { IsString, IsBoolean, IsNotEmpty } from 'class-validator'
-import { ApiProperty } from '@nestjs/swagger'
-
 export class IdentityResourcesDTO {
-  @IsString()
-  @IsNotEmpty()
-  @ApiProperty({
-    example: 'set_key',
-  })
-  readonly key: string
-
-  @IsBoolean()
-  @IsNotEmpty()
-  @ApiProperty({
-    example: true,
-  })
-  enabled: boolean
-
-  @IsString()
-  @IsNotEmpty()
-  @ApiProperty({
-    example: 'set_name',
-  })
-  name: string
-
-  @IsString()
-  @IsNotEmpty()
-  @ApiProperty({
-    example: 'set_display_name',
-  })
-  displayName: string
-
-  @IsString()
-  @IsNotEmpty()
-  @ApiProperty({
-    example: 'set_description',
-  })
-  description: string
-
-  @IsBoolean()
-  @IsNotEmpty()
-  @ApiProperty({
-    example: true,
-  })
-  showInDiscoveryDocument: boolean
-
-  @IsBoolean()
-  @IsNotEmpty()
-  @ApiProperty({
-    example: false,
-  })
-  required: boolean
-
-  @IsBoolean()
-  @IsNotEmpty()
-  @ApiProperty({
-    example: false,
-  })
-  emphasize: boolean
+  constructor() {
+    this.key = "";
+    this.enabled = true;
+    this.name = "";
+    this.description = "";
+    this.displayName = "";
+    this.showInDiscoveryDocument = true;
+    this.required = false;
+    this.emphasize = false;
+  }
+  key: string;
+  enabled: boolean;
+  name: string;
+  displayName: string;
+  description: string;
+  showInDiscoveryDocument: boolean;
+  required: boolean;
+  emphasize: boolean;
 }

@@ -1,6 +1,7 @@
 import React from 'react';
-import './App.css';
+import './styles/App.scss';
 import ClientCard from './components/ClientCard'
+import Nav from './components/Nav';
 import ClientDTO from './models/dtos/client-dto'
 
 
@@ -18,6 +19,7 @@ const App = () => {
   return( 
     <div className='App'>
       <h1>Þjónustusíður</h1>
+      <Nav />
       <div className="clientcard__wrapper">
         <ClientCard client={new ClientDTO()} />
         

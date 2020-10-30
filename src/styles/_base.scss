@@ -1,0 +1,32 @@
+body {
+  background: white;
+  box-sizing: border-box;
+  font-family: IBM Plex Sans;
+}
+
+input {
+  background: #f2f7ff;
+  border: 1px solid #ccdfff;
+  border-radius: 8px;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 28px;
+  letter-spacing: 0em;
+  text-align: left;
+  padding: 10px 16px;
+}
+
+button {
+  padding: 10px 0px;
+  min-width: 100px;
+  background: #0061ff;
+  border-radius: 8px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28px;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+}

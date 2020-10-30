@@ -5,7 +5,7 @@ const ResourcesCard = () => (
     <Wrapper>
         <div className="resourcescard__container">
                 Þjónustur
-            </div>
+        </div>
     </Wrapper>
     
 )

@@ -3,6 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import axios from 'axios';
+
+// TODO: Set baseUrl
+// axios.defaults.baseURL = "http://localhost:3333";
+// Just to hold the imports in place
+// axios.defaults.auth = undefined;
+// axios.defaults.headers.Authorization = `Bearer ${localStorage.getItem('token')}`;
+
 
 ReactDOM.render(
   <React.StrictMode>

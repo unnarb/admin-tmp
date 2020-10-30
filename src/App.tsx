@@ -1,30 +1,23 @@
 import React from 'react';
 import './styles/App.scss';
-import ClientCard from './components/ClientCard'
-import Nav from './components/Nav';
-import ClientDTO from './models/dtos/client-dto'
+import ClientCard from './components/secure/ClientCard'
+import { BrowserRouter, Route } from 'react-router-dom';
+import ResourcesCard from './components/secure/ResourcesCard';
+import DefaultCard from './components/secure/DefaultCard';
+import Login from './components/public/Login';
 
 
 
 const App = () => {
-
-  const dummy = (e: React.MouseEvent<HTMLButtonElement>) => {
-      return null;  
-  }
-
-  const dummy2 = () => {
-      return null;
-  }
-
   return( 
     <div className='App'>
-      <h1>Þjónustusíður</h1>
-      <Nav />
-      <div className="clientcard__wrapper">
-        <ClientCard client={new ClientDTO()} />
-        
-      </div>
-    </div>
+      <BrowserRouter>
+        <Route path={'/'} exact component={DefaultCard} />
+        <Route path={'/login'} exact component={Login} />
+        <Route path={'/clients'} exact component={ClientCard} />
+        <Route path={'/resources'} exact component={ResourcesCard} />
+      </BrowserRouter>
+    </div>    
   )
 }
 

@@ -2,6 +2,7 @@ body {
   background: white;
   box-sizing: border-box;
   font-family: IBM Plex Sans;
+  margin: 0 10px;
 }
 
 input {
@@ -29,4 +30,14 @@ button {
   align-items: center;
   text-align: center;
   color: #ffffff;
+}
+
+ul {
+  display: inline-block;
+
+  li {
+    display: inline-block;
+    list-style: none;
+    margin: 0 10px 0 0;
+  }
 }

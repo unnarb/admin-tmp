@@ -4,7 +4,7 @@ const Nav = () => (
     <div className="nav__container">
         <nav className="nav__navigation">
             <ul>
-                <li>Vefur / Forrit</li>
+                <li>Vefir og smáforrit</li>
                 <li>Þjónustur</li>
                 <li>Notendur</li>
             </ul>

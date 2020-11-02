@@ -41,3 +41,50 @@ ul {
     margin: 0 10px 0 0;
   }
 }
+
+h1 {
+  color: #6a2ea0;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 44px;
+  letter-spacing: 0em;
+}
+
+h2 {
+  color: #6a2ea0;
+  font-family: IBM Plex Sans;
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 44px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+h3 {
+  font-family: IBM Plex Sans;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 34px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+div[class$="container__field"] {
+  display: flex;
+  width: 100%;
+  padding: 8px;
+  align-items: center;
+
+  label {
+    flex-basis: 50%;
+    text-align: right;
+  }
+
+  input {
+    flex-basis: 50%;
+    justify-self: flex-end;
+  }
+}

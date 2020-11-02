@@ -11,18 +11,18 @@ type Props = {
 
 const ClientCard: React.FC<Props> = ({ client }) => {
 
+  let response = { 'statusCode': 200, 'message': [], 'error': null }
+
   if (client == null)
   {
     client = new ClientDTO();
   }
   
   const save = async (client: ClientDTO) => {
-    const response = await axios.post(
-      `./clients`, client
+    response = await axios.post(
+      '/clients', client
     );
     console.log(response);
-    alert("Save pushed: " + client.clientName);
-    
   };
 
   const back = () => {
@@ -37,6 +37,9 @@ const ClientCard: React.FC<Props> = ({ client }) => {
 
   return (
     <Wrapper>
+      <div className="clientcard__container__response">
+        {response.message}
+      </div>
       <div className="clientcard__wrapper">
         <div className="clientcard__container">
           <h1>Stofna nýjann Client</h1>
@@ -81,7 +84,7 @@ const ClientCard: React.FC<Props> = ({ client }) => {
              
               <div className="clientcard__container__field">
                 <label className="clientcard__label">Virkur</label>
-                <input type="checkbox" className="clientcard__checkbox" defaultValue={client.enabled.toString()} onChange={e => client.enabled = e.target.checked}></input>
+                <input type="checkbox" className="clientcard__checkbox" defaultChecked={client.enabled} onChange={e => client.enabled = e.target.checked}></input>
               </div>
 
               <div className="clientcard__container__button">
@@ -113,7 +116,7 @@ const ClientCard: React.FC<Props> = ({ client }) => {
                 <label className="clientcard__label">allowAccessTokenViaBrowser</label>
                 <input
                   type="checkbox"
-                  defaultValue={client.allowAccessTokenViaBrowser.toString()}
+                  defaultChecked={client.allowAccessTokenViaBrowser}
                   onChange={e => client.allowAccessTokenViaBrowser = e.target.checked}
                   className="clientcard__input"
                 />
@@ -122,7 +125,7 @@ const ClientCard: React.FC<Props> = ({ client }) => {
                 <label className="clientcard__label">allowOfflineAccess</label>
                 <input
                   type="checkbox"
-                  defaultValue={client.allowOfflineAccess.toString()}
+                  defaultChecked={client.allowOfflineAccess}
                   onChange={e => client.allowOfflineAccess = e.target.checked}
                   className="clientcard__input"
                 />
@@ -131,7 +134,7 @@ const ClientCard: React.FC<Props> = ({ client }) => {
                 <label className="clientcard__label">allowPlainTextPkce</label>
                 <input
                   type="checkbox"
-                  defaultValue={client.allowPlainTextPkce.toString()}
+                  defaultChecked={client.allowPlainTextPkce}
                   onChange={e => client.allowPlainTextPkce = e.target.checked}
                   className="clientcard__input"
                 />
@@ -140,7 +143,7 @@ const ClientCard: React.FC<Props> = ({ client }) => {
                 <label className="clientcard__label">allowRememberConsent</label>
                 <input
                   type="checkbox"
-                  defaultValue={client.allowRememberConsent.toString()}
+                  defaultChecked={client.allowRememberConsent}
                   onChange={e => client.allowRememberConsent = e.target.checked}
                   className="clientcard__input"
                 />
@@ -149,7 +152,7 @@ const ClientCard: React.FC<Props> = ({ client }) => {
                 <label className="clientcard__label">alwaysIncludeUserClaimsInIdToken</label>
                 <input
                   type="checkbox"
-                  defaultValue={client.alwaysIncludeUserClaimsInIdToken.toString()}
+                  defaultChecked={client.alwaysIncludeUserClaimsInIdToken}
                   onChange={e => client.alwaysIncludeUserClaimsInIdToken = e.target.checked}
                   className="clientcard__input"
                 />
@@ -158,7 +161,7 @@ const ClientCard: React.FC<Props> = ({ client }) => {
                 <label className="clientcard__label">alwaysSendClientClaims</label>
                 <input
                   type="checkbox"
-                  defaultValue={client.alwaysSendClientClaims.toString()}
+                  defaultChecked={client.alwaysSendClientClaims}
                   onChange={e => client.alwaysSendClientClaims = e.target.checked}
                   className="clientcard__input"
                 />
@@ -176,13 +179,13 @@ const ClientCard: React.FC<Props> = ({ client }) => {
                 <label className="clientcard__label">backChannelLogoutSessionRequired</label>
                 <input
                   type="checkbox"
-                  defaultValue={client.backChannelLogoutSessionRequired.toString()}
+                  defaultChecked={client.backChannelLogoutSessionRequired}
                   onChange={e => client.backChannelLogoutSessionRequired = e.target.checked}
                   className="clientcard__input"
                 />
               </div>
               <div className="clientcard__container__field">
-                <label className="clientcard__label">backChannelLogoutSessionRequired</label>
+                <label className="clientcard__label">clientClaimsPrefix</label>
                 <input
                   type="text"
                   defaultValue={client.clientClaimsPrefix}
@@ -224,7 +227,7 @@ const ClientCard: React.FC<Props> = ({ client }) => {
                 <label className="clientcard__label">enableLocalLogin</label>
                 <input
                   type="checkbox"
-                  defaultValue={client.enableLocalLogin.toString()}
+                  defaultChecked={client.enableLocalLogin}
                   onChange={e => client.enableLocalLogin = e.target.checked}
                   className="clientcard__input"
                 />
@@ -234,7 +237,7 @@ const ClientCard: React.FC<Props> = ({ client }) => {
                 <label className="clientcard__label">frontChannelLogoutSessionRequired</label>
                 <input
                   type="checkbox"
-                  defaultValue={client.frontChannelLogoutSessionRequired.toString()}
+                  defaultChecked={client.frontChannelLogoutSessionRequired}
                   onChange={e => client.frontChannelLogoutSessionRequired = e.target.checked}
                   className="clientcard__input"
                 />
@@ -264,7 +267,7 @@ const ClientCard: React.FC<Props> = ({ client }) => {
                 <label className="clientcard__label">includeJwtId</label>
                 <input
                   type="checkbox"
-                  defaultValue={client.includeJwtId.toString()}
+                  defaultChecked={client.includeJwtId}
                   onChange={e => client.includeJwtId = e.target.checked}
                   className="clientcard__input"
                 />
@@ -314,7 +317,7 @@ const ClientCard: React.FC<Props> = ({ client }) => {
                 <label className="clientcard__label">requireClientSecret</label>
                 <input
                   type="checkbox"
-                  defaultValue={client.requireClientSecret.toString()}
+                  defaultChecked={client.requireClientSecret}
                   onChange={e => client.requireClientSecret = e.target.checked}
                   className="clientcard__input"
                 />
@@ -324,7 +327,7 @@ const ClientCard: React.FC<Props> = ({ client }) => {
                 <label className="clientcard__label">requireConsent</label>
                 <input
                   type="checkbox"
-                  defaultValue={client.requireConsent.toString()}
+                  defaultChecked={client.requireConsent}
                   onChange={e => client.requireConsent = e.target.checked}
                   className="clientcard__input"
                 />
@@ -334,7 +337,7 @@ const ClientCard: React.FC<Props> = ({ client }) => {
                 <label className="clientcard__label">requirePkce</label>
                 <input
                   type="checkbox"
-                  defaultValue={client.requirePkce.toString()}
+                  defaultChecked={client.requirePkce}
                   onChange={e => client.requirePkce = e.target.checked}
                   className="clientcard__input"
                 />
@@ -354,7 +357,7 @@ const ClientCard: React.FC<Props> = ({ client }) => {
                 <label className="clientcard__label">updateAccessTokenClaimsOnRefresh</label>
                 <input
                   type="checkbox"
-                  defaultValue={client.updateAccessTokenClaimsOnRefresh.toString()}
+                  defaultChecked={client.updateAccessTokenClaimsOnRefresh}
                   onChange={e => client.updateAccessTokenClaimsOnRefresh = e.target.checked}
                   className="clientcard__input"
                 />

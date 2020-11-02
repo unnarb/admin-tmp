@@ -76,7 +76,7 @@ class Clients extends Component {
           <h2>Vefir og smáforrit</h2>
           <div className="clients__container__options">
               <div className="clients__container__button">
-                  <Link to={'/clients/create'} className="clients__button__new">Bæta við nýjum</Link>
+                  <Link to={'/app/create'} className="clients__button__new">Bæta við nýjum</Link>
               </div>
             <div className="clients__container__field">
 

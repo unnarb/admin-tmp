@@ -18,8 +18,8 @@ const App = () => {
         <Route path={'/'} exact component={RedirectToMain} />
         <Route path={'/main'} exact component={Main} />
         <Route path={'/login'} exact component={Login} />
-        <Route path={'/clients'} exact component={Clients} />
-        <Route path={'/clients/create'} exact component={ClientCard} />
+        <Route path={'/app'} exact component={Clients} />
+        <Route path={'/app/create'} exact component={ClientCard} />
         <Route path={'/resources'} exact component={ResourcesCard} />
         <Route path={'/users'} exact component={UsersCard} />
       </BrowserRouter>

@@ -19,7 +19,7 @@ class Header extends Component {
             <Redirect to={'/login'} />
         }
         return (
-            <div className="header__container">
+            <header className="header__container">
                 <h1>Þjónustusíður</h1>
                 <div className="header__container__user">
                     <div className="header__user">
@@ -29,7 +29,7 @@ class Header extends Component {
                     </div>
                     </div>
                 </div>
-            </div>)
+            </header>)
     }
 }
 

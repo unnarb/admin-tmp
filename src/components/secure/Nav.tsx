@@ -6,8 +6,7 @@ const Nav = () => (
         <nav className="nav__navigation">
             <ul>
                 <li><NavLink to={'/'} className="nav__link" >Forsíða</NavLink></li>
-                <li><NavLink to={'/clients'} className="nav__link" >Vefir og smáforrit</NavLink></li>
-                <li><NavLink to={'/clients'} className="nav__link" >Vefir og smáforrit</NavLink></li>
+                <li><NavLink to={'/app'} className="nav__link" >Vefir og smáforrit</NavLink></li>
                 <li><NavLink to={'/resources'} className="nav__link" >Þjónustur</NavLink></li>
                 <li><NavLink to={'/users'} className="nav__link" >Notendur</NavLink></li>
             </ul>

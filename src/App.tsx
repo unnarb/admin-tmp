@@ -7,6 +7,7 @@ import UsersCard from './components/secure/UsersCard';
 import Clients from './components/secure/Clients';
 import RedirectToMain from './components/secure/RedirectToMain';
 import Main from './components/secure/Main';
+import ClientCard from './components/secure/ClientCard';
 
 
 
@@ -18,6 +19,7 @@ const App = () => {
         <Route path={'/main'} exact component={Main} />
         <Route path={'/login'} exact component={Login} />
         <Route path={'/clients'} exact component={Clients} />
+        <Route path={'/clients/create'} exact component={ClientCard} />
         <Route path={'/resources'} exact component={ResourcesCard} />
         <Route path={'/users'} exact component={UsersCard} />
       </BrowserRouter>

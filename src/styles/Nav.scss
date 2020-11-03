@@ -1,0 +1,65 @@
+.nav {
+  $c: &;
+  &__container {
+    padding-bottom: 10px;
+    box-sizing: border-box;
+
+    a {
+      display: flex;
+      justify-content: center;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 28px;
+      color: #00003c;
+      min-width: 200px;
+      text-decoration: none;
+      padding-bottom: 10px;
+
+      &.active {
+        color: #0061ff;
+        font-weight: 600;
+        border-bottom: solid 2px #0061ff;
+      }
+
+      // setting the container border when active
+      // &.active,
+      //   #{$c} {
+      //     border-bottom: solid 2px #0061ff;
+      //   }
+    }
+  }
+}
+
+// li {
+//   $li: &;
+
+//   .nav__link {
+//     font-family: IBM Plex Sans;
+//     font-weight: 300;
+//     font-size: 18px;
+//     line-height: 28px;
+//     display: flex;
+//     align-items: flex-end;
+//     text-align: center;
+//     color: #00003c;
+//     min-width: 200px;
+//     text-decoration: none;
+
+//     &.active {
+//       color: #0061ff;
+//       font-family: IBM Plex Sans;
+//       font-weight: 600;
+//       font-size: 18px;
+//       line-height: 28px;
+
+//       display: flex;
+//       align-items: flex-end;
+//       text-align: center;
+//     }
+
+//     &.active li {
+//       background: red;
+//       border: solid 12px black;
+//     }
+//   }
+// }

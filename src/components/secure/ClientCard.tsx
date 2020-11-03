@@ -37,6 +37,10 @@ const ClientCard: React.FC<Props> = ({ client }) => {
 
   return (
     <Wrapper>
+      <div className="clientcard">
+        <div className="clientcard__help">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur sed alias neque ullam repudiandae, iste reiciendis suscipit rerum officiis necessitatibus doloribus incidunt libero distinctio consequuntur voluptatibus tenetur aliquid ut inventore!
+        </div>
       <div className="clientcard__container__response">
         {response.message}
       </div>
@@ -386,7 +390,6 @@ const ClientCard: React.FC<Props> = ({ client }) => {
 
               </div>
             </div>
-            <div>{client.absoluteRefreshTokenLifetime}</div>
             <div className="clientcard__buttons__container">
               <div className="clientcard__button__container">
                 <button className="clientcard__button__cancel" onClick={back}>
@@ -405,6 +408,7 @@ const ClientCard: React.FC<Props> = ({ client }) => {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </Wrapper>
   );

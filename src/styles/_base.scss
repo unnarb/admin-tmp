@@ -2,20 +2,32 @@ body {
   background: white;
   box-sizing: border-box;
   font-family: IBM Plex Sans;
-  margin: 0 10px;
+  margin: 0 40px;
 }
 
 input {
-  background: #f2f7ff;
+  box-sizing: border-box;
+  background: #ffffff;
   border: 1px solid #ccdfff;
   border-radius: 8px;
+}
+
+input[type="text"],
+input[type="number"] {
+  // @extend input;
+  padding: 30px 16px 10px 20px;
+  height: 60px;
   font-size: 18px;
   font-style: normal;
   font-weight: 300;
   line-height: 28px;
   letter-spacing: 0em;
   text-align: left;
-  padding: 10px 16px;
+}
+
+input[type="checkbox"] {
+  width: 30px;
+  height: 30px;
 }
 
 button {
@@ -30,6 +42,7 @@ button {
   align-items: center;
   text-align: center;
   color: #ffffff;
+  border: none;
 }
 
 ul {

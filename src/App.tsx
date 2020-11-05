@@ -7,7 +7,7 @@ import UsersCard from './components/secure/UsersCard';
 import Clients from './components/secure/Clients';
 import RedirectToMain from './components/secure/RedirectToMain';
 import Main from './components/secure/Main';
-import ClientCard from './components/secure/ClientCard';
+import ClientCard from './components/secure/Client';
 
 
 

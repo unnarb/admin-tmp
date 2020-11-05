@@ -1,4 +1,4 @@
-.clientcard {
+.client {
   &__container {
     h1 {
       font-family: IBM Plex Sans;
@@ -41,14 +41,13 @@
       margin-left: 8px;
     }
   }
-}
 
-// <div className="clientcard__container__field">
-//                 <label className="clientcard__label">clientId</label>
-//                 <input
-//                   type="text"
-//                   defaultValue={client.clientId}
-//                   onChange={e => client.clientId = e.target.value}
-//                   className="clientcard__input"
-//                 />
-//               </div>
+  &__button__show {
+    background-color: transparent;
+    color: #0061ff;
+    font-weight: 300;
+    text-decoration: underline;
+    font-size: 14px;
+    padding: 0;
+  }
+}

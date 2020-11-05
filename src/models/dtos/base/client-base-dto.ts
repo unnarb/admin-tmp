@@ -30,7 +30,7 @@ export abstract class ClientBaseDTO {
     this.frontChannelLogoutSessionRequired = true;
     this.backChannelLogoutUri = null;
     this.allowRememberConsent = true;
-    this.clientClaimsPrefix = "";
+    this.clientClaimsPrefix = "client__";
     this.clientName = "";
     this.clientUri = null;
     this.description = null;

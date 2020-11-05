@@ -3,6 +3,7 @@ import axios from "axios";
 import ClientDTO from "../../models/dtos/client-dto";
 import Wrapper from "./Wrapper";
 import { Link } from "react-router-dom";
+import Paginator from "./Paginator";
 
 class Clients extends Component {
   state = {
@@ -33,25 +34,12 @@ class Clients extends Component {
     console.log(response.data);
   };
 
-  next = async () => {
-    if (this.page === this.lastPage) {
-      return;
-    }
-
-    this.page++;
+  handlePageChange = async (page: number) => {
+    this.page = page;
     await this.componentDidMount();
-  };
+  }
 
-  previous = async () => {
-    if (this.page === 1) {
-      return;
-    }
-
-    this.page--;
-
-    await this.componentDidMount();
-  };
-
+ 
   delete = async (clientId: string) => {
     if (window.confirm("Ertu viss um að þú viljir eyða þessari færslu?")) {
       const response = await axios.delete(`./clients/${clientId}`);
@@ -101,6 +89,7 @@ class Clients extends Component {
                 <tr>
                   <th>Auðkenni</th>
                   <th>Identity token lifetime</th>
+                  <th colSpan={2}></th>
                 </tr>
               </thead>
               <tbody>
@@ -133,26 +122,8 @@ class Clients extends Component {
           </div>
         </div>
 
-        <nav className="clients__pagination">
-          <li className="clients__page-item">
-            <a
-              href="#"
-              onClick={this.previous}
-              className="clients__pagination-previous"
-            >
-              Til baka
-            </a>
-          </li>
-          <li className="clients__page-item">
-            <a
-              href="#"
-              onClick={this.next}
-              className="clients__pagination-next"
-            >
-              Næsta
-            </a>
-          </li>
-        </nav>
+        <Paginator lastPage={this.lastPage} handlePageChange={this.handlePageChange} />
+        
       </Wrapper>
     );
   }

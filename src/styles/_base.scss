@@ -179,16 +179,27 @@ nav[class$="pagination"] {
     display: inline-block;
     list-style: none;
     margin-right: 50px;
-    a {
-      /* Paragraph / Default */
-
+    button {
       font-family: IBM Plex Sans;
       font-style: normal;
       font-weight: 300;
       font-size: 18px;
       line-height: 28px;
-
       color: #0061ff;
+      cursor: pointer;
+      background: none;
+      border: none;
+      border-bottom: solid 2px #0061ff;
+      border-radius: 0;
+
+      &:disabled {
+        color: #ccc;
+        border-bottom: solid 2px #ccc;
+      }
+
+      &:focus {
+        outline: 0;
+      }
     }
   }
 }

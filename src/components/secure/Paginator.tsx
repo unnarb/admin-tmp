@@ -5,7 +5,7 @@ class Paginator extends Component<{lastPage: number, handlePageChange: any}> {
     
 
     componentDidMount(){
-
+      this.render();
     }
 
     next = async () => {
@@ -27,25 +27,28 @@ class Paginator extends Component<{lastPage: number, handlePageChange: any}> {
       };
     
         render() {
+          console.log(this.page);
+          console.log("Paginator: " + this.props.lastPage);
+
         return (
             <nav className="paginator__pagination">
           <li className="paginator__page-item">
-            <a
-              href="#"
+            <button
               onClick={this.previous}
               className="paginator__pagination-previous"
+              disabled={this.page === 1}
             >
               Til baka
-            </a>
+            </button>
           </li>
           <li className="paginator__page-item">
-            <a
-              href="#"
+            <button
               onClick={this.next}
               className="paginator__pagination-next"
+              disabled={this.page === this.props.lastPage}
             >
               Næsta
-            </a>
+            </button>
           </li>
         </nav>
         );

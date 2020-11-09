@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import APIResponse from "../../models/APIResponse";
 
 class StatusBar extends Component<{status: APIResponse}> {
-    render() {
+    render()
+    {
+        console.log("StatusBar " + this.props.status.statusCode);
         let className = 'statusbar';
         if (this.props.status.statusCode !== 200) {
           className += ' error';

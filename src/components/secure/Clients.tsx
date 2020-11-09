@@ -28,7 +28,7 @@ class Clients extends Component {
     );
 
     // this.lastPage = response.data.lastpage;
-    this.lastPage = this.state.rowCount / this.count;
+    this.lastPage = Math.ceil(this.state.rowCount / this.count);
     console.log("Lastpage: " + this.lastPage);
 
     console.log(response.data);
@@ -54,6 +54,8 @@ class Clients extends Component {
 
   changeCount(count: string) {
     this.count = +count;
+    this.page = 1;
+    console.log(this.page);
     this.componentDidMount();
   }
 
@@ -79,7 +81,7 @@ class Clients extends Component {
                 <option value="1">1</option>
                 <option value="30">30</option>
                 <option value="50">50</option>
-                <option value="100">50</option>
+                <option value="100">100</option>
               </select>
             </div>
           </div>
